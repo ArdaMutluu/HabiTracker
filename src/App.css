@@ -1,0 +1,41 @@
+/* Custom CSS for radial progress */
+.radial-progress {
+  --size: 80px;
+  --thickness: 10px;
+  --value: 0;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: conic-gradient(
+    #34d399 calc(var(--value) * 1%), 
+    #e5e7eb 0
+  );
+  position: relative;
+}
+
+.radial-progress:before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--thickness) / 2);
+  border-radius: inherit;
+  background-color: #1f2937; /* Dark gray center */
+}
+
+body {
+  background-color: #1f2937; /* Dark gray */
+  color: #ffffff; /* White text */
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+/* Adjust for hover effects on buttons */
+button:hover {
+  background-color: #374151; /* Slightly lighter on hover */
+}
+
+.missed-day-text {
+  color: red;
+  font-weight: bold;
+}
